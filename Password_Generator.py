@@ -1,11 +1,11 @@
 import random
 import array
 
-# maximum length of password needed
-# this can be changed to suit your password length
-MAX_LEN = 24
+# maximum length of PASSWORD needed
+# this can be changed to suit your PASSWORD length
+MAX_LEN = 20
 
-# declare arrays of the character that we need in out password
+# declare arrays of the character that we need in out PASSWORD
 # Represented as chars to enable easy string concatenation
 NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 LOCASE_CHARACTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -32,30 +32,34 @@ rand_lower = random.choice(LOCASE_CHARACTERS)
 rand_symbol = random.choice(SYMBOLS)
 
 # combine the character randomly selected above
-# at this stage, the password contains only 4 characters but
-# we want a 12-character password
+# at this stage, the PASSWORD contains only 4 characters but
+# we want a 12-character PASSWORD
 temp_pass = rand_digit + rand_upper + rand_lower + rand_symbol
 
 
 # now that we are sure we have at least one character from each
 # set of characters, we fill the rest of
-# the password length by selecting randomly from the combined
+# the PASSWORD length by selecting randomly from the combined
 # list of character above.
 for x in range(MAX_LEN - 4):
     temp_pass = temp_pass + random.choice(COMBINED_LIST)
 
-	# convert temporary password into array and shuffle to
+	# convert temporary PASSWORD into array and shuffle to
 	# prevent it from having a consistent pattern
-	# where the beginning of the password is predictable
+	# where the beginning of the PASSWORD is predictable
     temp_pass_list = array.array('u', temp_pass)
     random.shuffle(temp_pass_list)
 
-# traverse the temporary password array and append the chars
-# to form the password
-password = ""
+# traverse the temporary PASSWORD array and append the chars
+# to form the PASSWORD
+PASSWORD = ""
 
 for x in temp_pass_list:
-		password = password + x
-		
-# print out password
-print(password)
+    PASSWORD = PASSWORD + x
+
+# print out PASSWORD
+print("Thank you for using the password generator")
+print("Your password is below")
+print("=============================")
+print("== ",PASSWORD, " ==")
+print("=============================")
