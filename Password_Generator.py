@@ -3,7 +3,7 @@ import array
 
 # maximum length of password needed
 # this can be changed to suit your password length
-MAX_LEN = 12
+MAX_LEN = 24
 
 # declare arrays of the character that we need in out password
 # Represented as chars to enable easy string concatenation
@@ -48,7 +48,7 @@ for x in range(MAX_LEN - 4):
 	# prevent it from having a consistent pattern
 	# where the beginning of the password is predictable
     temp_pass_list = array.array('u', temp_pass)
-	random.shuffle(temp_pass_list)
+    random.shuffle(temp_pass_list)
 
 # traverse the temporary password array and append the chars
 # to form the password
